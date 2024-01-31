@@ -28,7 +28,7 @@ class Converter:
         except ValueError:
             raise APIException(f'Не удалось обработать количество {amount}!')
 
-        r = requests.get(f'https://api.currencyapi.com/v3/latest?apikey=cur_live_dVzdZ7dOGdGyn9IQAj7ubMp7r0lCn8aayf956olY&currencies={keys[quote]}&base_currency={keys[base]}')
+        r = requests.get(f'ooops2')
         total_base = round(json.loads(r.content)["data"][f'{keys[quote]}']['value'], 3) * float(amount)
 
         return total_base
