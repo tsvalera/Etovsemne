@@ -87,27 +87,22 @@ def callback_worker(call):
             x = Fish(page_fish)
             send_mess(call, x)
 
-    if call.data == 'result':
         if count == 4:
             x = Amphibians(page_amphibians)
             send_mess(call, x)
 
-    if call.data == 'result':
         if count == 5:
             x = Reptiles(page_reptiles)
             send_mess(call, x)
 
-    if call.data == 'result':
         if count == 6:
             x = Mammals(page_mammals)
             send_mess(call, x)
 
-    if call.data == 'result':
         if count == 7:
             x = Invertebrates(page_invertebrates)
             send_mess(call, x)
 
-    if call.data == 'result':
         if count > 7:
             x = Birds(page_birds)
             send_mess(call, x)
