@@ -26,7 +26,7 @@ class Category(models.Model):
     subscribers = models.ManyToManyField(User, related_name='categories')
 
     def __str__(self):
-        return self.name
+        return self.name.title()
 
 
 class Post(models.Model):
@@ -84,16 +84,16 @@ class Comment(models.Model):
         self.save()
 
 
-class Subscription(models.Model):
-    user = models.ForeignKey(
-        to=User,
-        on_delete=models.CASCADE,
-        related_name='subscriptions',
-    )
-    category = models.ForeignKey(
-        to='Author',
-        on_delete=models.CASCADE,
-        related_name='subscriptions',
-    )
+# class Subscription(models.Model):
+#     user = models.ForeignKey(
+#         to=User,
+#         on_delete=models.CASCADE,
+#         related_name='subscriptions',
+#     )
+#     category = models.ForeignKey(
+#         to='Author',
+#         on_delete=models.CASCADE,
+#         related_name='subscriptions',
+#     )
 
 

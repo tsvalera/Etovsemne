@@ -1,3 +1,5 @@
+from .tasks import *
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.db.models import Exists, OuterRef
@@ -66,6 +68,9 @@ class PostCreate(PermissionRequiredMixin, CreateView):
             post.categoryType = 'NW'
         elif self.request.path == '/article/create/':
             post.categoryType = 'AR'
+        post.save()
+        send_email.delay(post.pk)
+        # hello.delay()
         return super().form_valid(form)
 
 

@@ -11,7 +11,7 @@ from django_apscheduler.jobstores import DjangoJobStore
 from django_apscheduler.models import DjangoJobExecution
 from django.core.mail import EmailMultiAlternatives
 
-from news.models import Post, Category
+from .models import Post, Category
 
 
 logger = logging.getLogger(__name__)
