@@ -1,0 +1,23 @@
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 4582
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 4633
+"GET /news HTTP/1.1" 301 0
+"GET /news/ HTTP/1.1" 200 8019
+Not Found: /news/js/scripts.js
+"GET /news/js/scripts.js HTTP/1.1" 404 4654
+"GET /static/css/styles.css HTTP/1.1" 200 236765
+"GET /news/85/ HTTP/1.1" 200 2265
+Not Found: /news/85/js/scripts.js
+"GET /news/85/js/scripts.js HTTP/1.1" 404 4663
+"GET /news/85/ HTTP/1.1" 200 2265
+Not Found: /news/85/js/scripts.js
+"GET /news/85/js/scripts.js HTTP/1.1" 404 4663
+"GET /news/83/ HTTP/1.1" 200 2265
+Not Found: /news/83/js/scripts.js
+"GET /news/83/js/scripts.js HTTP/1.1" 404 4663
+Watching for file changes with StatReloader
+"GET /news/85/ HTTP/1.1" 200 2265
+Not Found: /news/85/js/scripts.js
+"GET /news/85/js/scripts.js HTTP/1.1" 404 4663

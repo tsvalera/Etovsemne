@@ -12,6 +12,10 @@ from .filters import *
 from .forms import *
 from .models import *
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 # Create your views here.
 class NewsList(ListView):

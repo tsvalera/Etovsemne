@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-x6x=&$4eeioby&y$t8nw4*h#@ir&ypzy2^u(+22lo4h5ek&f_n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -155,19 +155,20 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 ACCOUNT_FORMS = {"signup": "accounts.forms.CustomSignupForm"}
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = ""
+EMAIL_HOST_USER = "tsv3l@yandex.ru"
 
 EMAIL_HOST_PASSWORD = ''
 
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
-DEFAULT_FROM_EMAIL = ""
+DEFAULT_FROM_EMAIL = "tsv3l@yandex.ru"
+SERVER_EMAIL = "tsv3l@yandex.ru"
 
 SITE_URL ='http://127.0.0.1:8000'
 
@@ -180,3 +181,118 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
+
+ADMINS = [
+    ('Valera', 'surok777_95@mail.ru')
+]
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'style': '{',
+    'loggers': {
+        'django': {
+            'handlers': ['info', 'console', 'console_warning', 'console_errors'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['errors', 'mail_admin'],
+            # 'level': 'ERROR',
+            'propagate': True,
+        },
+        'django.server': {
+            'handlers': ['errors', 'mail_admin'],
+            'propagate': True,
+        },
+        'django.template': {
+            'handlers': ['errors'],
+            'propagate': True,
+        },
+        'django.db.backends': {
+            'handlers': ['errors'],
+            'propagate': True,
+        },
+        'django.security': {
+            'handlers': ['security'],
+            'propagate': False,
+        },
+    },
+    'handlers': {
+        # 'news': {
+        #     'level': 'INFO',
+        #     'class': 'logging.FileHandler',
+        #     'filename': 'debug.log'
+        # },
+        'info': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'general.log',
+            'formatter': 'my_formatters_info_security',
+            'filters': ['debug_false'],
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'my_formatters_debug',
+            'filters': ['debug_true'],
+        },
+        'console_warning': {
+            'level': 'WARNING',
+            'class': 'logging.StreamHandler',
+            'formatter': 'my_formatters_warning',
+            'filters': ['debug_true'],
+        },
+        'console_errors': {
+            'level': 'ERROR',
+            'class': 'logging.StreamHandler',
+            'formatter': 'my_formatters_errors',
+            'filters': ['debug_true'],
+        },
+        'errors': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'errors.log',
+            'formatter': 'my_formatters_errors'
+        },
+        'security': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'filename': 'security.log',
+            'formatter': 'my_formatters_info_security'
+        },
+        'mail_admin': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'formatter': 'my_formatters_warning',
+            'filters': ['debug_false'],
+        },
+    },
+    'formatters': {
+        'my_formatters_info_security': {
+            'format': '%{asctime}s %{levelname}s %{module}s %{message}s',
+            'style': '{'
+        },
+        'my_formatters_errors': {
+            'format': '%{asctime}s %{levelname}s %{message}s %{pathname}s %{exc_info}s',
+            'style': '{'
+        },
+        'my_formatters_debug': {
+            'format': '%{asctime}s %{levelname}s %{message}s',
+            'style': '{'
+        },
+        'my_formatters_warning': {
+            'format': '%{asctime}s %{levelname}s %{message}s %{pathname}s',
+            'style': '{'
+        },
+    },
+    'filters': {
+        'debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+}

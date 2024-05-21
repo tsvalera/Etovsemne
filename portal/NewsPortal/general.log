@@ -1,0 +1,62 @@
+%2024-05-21 14:10:24,340s %INFOs %autoreloads %Watching for file changes with StatReloaders
+%2024-05-21 14:10:28,220s %INFOs %basehttps %"GET /news/85/ HTTP/1.1" 200 2265s
+%2024-05-21 14:10:28,266s %WARNINGs %logs %Not Found: /news/85/js/scripts.jss
+%2024-05-21 14:10:28,267s %WARNINGs %basehttps %"GET /news/85/js/scripts.js HTTP/1.1" 404 4663s
+%2024-05-21 15:05:42,592s %INFOs %autoreloads %Watching for file changes with StatReloaders
+%2024-05-21 15:05:46,230s %WARNINGs %logs %Not Found: /news/85/js/scripts.jss
+%2024-05-21 15:10:20,119s %INFOs %autoreloads %Watching for file changes with StatReloaders
+%2024-05-21 15:10:27,846s %WARNINGs %logs %Not Found: /news/85/js/scripts.jss
+%2024-05-21 15:11:24,024s %INFOs %autoreloads %C:\Users\surok\Desktop\portal\NewsPortal\news\views.py changed, reloading.s
+%2024-05-21 15:11:25,160s %INFOs %autoreloads %Watching for file changes with StatReloaders
+%2024-05-21 15:11:25,763s %ERRORs %logs %Internal Server Error: /news/categories/4/s
+Traceback (most recent call last):
+  File "C:\Users\surok\Desktop\portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\surok\Desktop\portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\surok\Desktop\portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\surok\Desktop\portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\surok\Desktop\portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\surok\Desktop\portal\NewsPortal\news\views.py", line 102, in get_queryset
+    queryset = Posts.objects.filter(postCategory=self.category).order_by('-dateCreation')
+NameError: name 'Posts' is not defined
+%2024-05-21 15:11:28,038s %WARNINGs %logs %Not Found: /news/85/js/scripts.jss
+%2024-05-21 15:11:45,475s %INFOs %autoreloads %C:\Users\surok\Desktop\portal\NewsPortal\news\views.py changed, reloading.s
+%2024-05-21 15:11:46,534s %INFOs %autoreloads %Watching for file changes with StatReloaders
+%2024-05-21 15:11:47,074s %WARNINGs %logs %Not Found: /news/categories/4/js/scripts.jss
+%2024-05-21 15:22:41,425s %INFOs %autoreloads %Watching for file changes with StatReloaders
+%2024-05-21 15:23:24,346s %INFOs %autoreloads %C:\Users\surok\Desktop\portal\NewsPortal\news\views.py changed, reloading.s
+%2024-05-21 15:23:25,214s %INFOs %autoreloads %Watching for file changes with StatReloaders
+%2024-05-21 15:23:46,908s %INFOs %autoreloads %C:\Users\surok\Desktop\portal\NewsPortal\news\views.py changed, reloading.s
+%2024-05-21 15:23:47,966s %INFOs %autoreloads %Watching for file changes with StatReloaders
+%2024-05-21 15:24:09,185s %INFOs %autoreloads %C:\Users\surok\Desktop\portal\NewsPortal\news\views.py changed, reloading.s
+%2024-05-21 15:24:10,056s %INFOs %autoreloads %Watching for file changes with StatReloaders
+%2024-05-21 15:24:14,273s %WARNINGs %logs %Not Found: /news/85/js/scripts.jss
+%2024-05-21 15:25:26,080s %INFOs %autoreloads %Watching for file changes with StatReloaders
+%2024-05-21 15:26:10,282s %WARNINGs %logs %Not Found: /logins
+%2024-05-21 15:26:33,426s %WARNINGs %logs %Not Found: /news/85/js/scripts.jss
+%2024-05-21 15:28:57,062s %WARNINGs %logs %Not Found: /news/js/scripts.jss
+%2024-05-21 15:50:07,143s %INFOs %autoreloads %Watching for file changes with StatReloaders
+%2024-05-21 15:50:23,968s %INFOs %autoreloads %C:\Users\surok\Desktop\portal\NewsPortal\news\views.py changed, reloading.s
+%2024-05-21 15:50:24,818s %INFOs %autoreloads %Watching for file changes with StatReloaders
+%2024-05-21 15:50:25,269s %ERRORs %logs %Internal Server Error: /news/categories/4/s
+Traceback (most recent call last):
+  File "C:\Users\surok\Desktop\portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\surok\Desktop\portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\surok\Desktop\portal\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\surok\Desktop\portal\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\surok\Desktop\portal\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\surok\Desktop\portal\NewsPortal\news\views.py", line 102, in get_queryset
+    queryset = Posts.objects.filter(postCategory=self.category).order_by('-dateCreation')
+NameError: name 'Posts' is not defined
+%2024-05-21 15:50:27,078s %ERRORs %basehttps %"GET /news/categories/4/ HTTP/1.1" 500 145s
+%2024-05-21 15:50:38,576s %INFOs %autoreloads %C:\Users\surok\Desktop\portal\NewsPortal\news\views.py changed, reloading.s
+%2024-05-21 15:50:39,431s %INFOs %autoreloads %Watching for file changes with StatReloaders
